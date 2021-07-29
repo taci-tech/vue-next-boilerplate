@@ -1,0 +1,22 @@
+{
+  "name": "our-boilerplate-project-name",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "element-plus": "^1.0.2-beta.62",
+    "sass": "^1.36.0",
+    "sass-loader": "^12.1.0",
+    "vue": "^3.0.5",
+    "vue-router": "4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.2.5",
+    "@vue/compiler-sfc": "^3.0.5",
+    "vite": "^2.4.3",
+    "vite-plugin-style-import": "^1.0.1"
+  }
+}

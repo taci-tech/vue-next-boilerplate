@@ -1,0 +1,376 @@
+$mobile-break-point: 1020px;
+
+/* Global UI */
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  overflow: hidden;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+:root {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+:root body {
+  position: absolute;
+}
+
+/* Responsive */
+
+.mobile-only {
+  @media screen and (min-width: $mobile-break-point + 1px) {
+    display: none !important;
+  }
+}
+
+.desktop-only {
+  @media screen and (max-width: $mobile-break-point) {
+    display: none !important;
+  }
+}
+
+/* Font */
+
+a {
+  color: #287df0;
+}
+
+.primary-color {
+  color: #6f98eb;
+}
+
+* {
+  z-index: 9;
+}
+
+p h1 h2 h3 h4 h5 h6 {
+  z-index: 19;
+  letter-spacing: 0em;
+  color: #2c3e50;
+}
+
+p {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+h1 {
+  font-size: 45px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 28px;
+  margin-top: 24px;
+  margin-bottom: 18px;
+}
+
+h3 {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 14px;
+
+  svg {
+    margin-bottom: -5px;
+  }
+}
+
+h4 {
+  font-size: 18px;
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+
+h5 {
+  font-size: 16px;
+  margin-top: 12px;
+  margin-bottom: 10px;
+}
+
+/* Interactions Helper */
+
+.non-selectable {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */      
+}
+
+.non-clickable {
+  pointer-events: none; 
+}
+
+/* Image */
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
+/* Header */
+
+.global-header.scroll-at-top {
+  width: 100vw;
+  height: 120px;
+  margin-bottom: -120px;
+  background-color: #ffffff00;
+  backdrop-filter: unset;
+  -webkit-backdrop-filter: unset;
+}
+
+.global-header {
+  width: 100vw;
+  height: 80px;
+  margin-bottom: -80px;
+  background-color: #fdfdfdef;
+  backdrop-filter: saturate(125%) blur(30px);
+  -webkit-backdrop-filter: saturate(125%) blur(30px);
+  z-index: 2999;
+  position: relative;
+  position: fixed;
+}
+
+// hhh
+.global-header.scroll-at-top .container {
+  width: 100vw;
+  height: 119px;
+  max-width: 1020px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+.global-header .container {
+  width: 100vw;
+  height: 79px;
+  max-width: 1020px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+.global-header-dropdown {
+  transition: 0.25s ease;
+
+  width: 100vw;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: fixed;
+}
+
+.global-header-dropdown.opened {
+  transition: all 0.25s ease;
+
+  position: fixed;
+  opacity: 1;
+  width: 100vw;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 9999;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+// transition
+.global-header, .global-header .container {
+  transition: height 0.35s ease;
+  -ms-transition: height 0.35s ease;
+  -webkit-transition: height 0.35s ease;
+}
+
+.global-header.scroll-at-top .h-divider {
+  background-color: #00000000;
+}
+
+.global-header .h-divider {
+  background-color: #00000006;
+}
+
+.global-header .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header-leading, .header-trailing {
+  display: flex;
+  align-items: center;
+
+  height: 100%;
+}
+
+#nav-menu, #nav-menu li {
+  height: calc(100% - 20px);
+  list-style: none; /* 将默认的列表符号去掉 */
+  padding: 0; /* 将默认的内边距去掉 */
+  margin: 0; /* 将默认的外边距去掉 */
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  user-select: none;
+}
+
+#nav-menu {
+  height: 100%;
+  display: flex;
+
+  li {
+    color: #2929294f;
+    font-size: 18px;
+    letter-spacing: .05em;
+    font-weight: 500;
+    display: inherit;
+    align-items: center;
+    float: left;
+
+    transition: color 0.25s ease;
+  }
+
+  li:hover {
+    color: #292929ff;
+
+    transition: color 0.25s ease;
+  }
+  
+  li.nav-item-act {
+    color: #292929ff;
+
+    transition: color 0.25s ease;
+  }
+}
+
+#nav-menu-mobile, #nav-menu-mobile li {
+  width: 100%;
+  list-style: none; /* 将默认的列表符号去掉 */
+  padding: 0; /* 将默认的内边距去掉 */
+  margin: 0; /* 将默认的外边距去掉 */
+  margin-top: 8px;
+  margin-bottom: 8px;
+
+  user-select: none;
+}
+
+#nav-menu-mobile {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  li {
+    color: #2929294f;
+    font-size: 29px;
+    letter-spacing: .05em;
+    font-weight: 500;
+    display: inherit;
+    align-items: center;
+    float: left;
+
+    transition: color 0.25s ease;
+  }
+
+  li:hover {
+    color: #292929ff;
+
+    transition: color 0.25s ease;
+  }
+  
+  li.nav-item-act {
+    color: #292929ff;
+
+    transition: color 0.25s ease;
+  }
+}
+
+/* Footer */
+
+.global-footer {
+  width: 100%;
+  min-height: 80px;
+  background-color: #fdfefeff;
+
+  & .container {
+    width: calc(100% - 40px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 980px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+
+    & .global-footer-bottom {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      p.foot-line {
+        color: #afafaf;
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+
+    & .defined-link, & .defined-text {
+      color: #c8c8c8;
+      font-size: 15px;
+      margin: 2px 0;
+    }
+
+    & h5 {
+      color: #9a9a9a;
+      margin-bottom: 7px;
+    }
+  }
+}
+
+.global-footer-links {
+  margin-top: 31px;
+  margin-bottom: 53px;
+
+  @media screen and (max-width: $mobile-break-point) {
+    margin-top: 20px !important;
+    margin-bottom: 50px !important;
+  }
+
+  & div {
+    @media screen and (max-width: $mobile-break-point) {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+/* Contents */
+
+.content-container {
+  width: calc(100% - 40px);
+  max-width: 980px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
