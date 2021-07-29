@@ -7,7 +7,6 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "element-plus": "^1.0.2-beta.62",
     "sass": "^1.36.0",
     "sass-loader": "^12.1.0",
     "vue": "^3.0.5",
