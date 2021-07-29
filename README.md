@@ -15,16 +15,20 @@ I am trying to make it an optimized well-done starter kit for most of the Vue de
 With more and more examples coming, it could be too useful for you.
 Not just a framework starter kit, but a perfect starting point for your extraordinary Web UI.
 
-## What's included
+**Note:** This project (VueBP) is not highly finished yet.
+The recent release has a `preview` at the end of the tag, which means that it is for preview purpose instead of for production.
+
+## What's included?
 
 - **`vue-next`**
 - **`vue-router`**
 - **`vite`**
+- **`sass-loader`** - enabling you to use this powerful css preprocessor
 - Some sample pages (a toy home, a 404, etc)
 - Some basic sample components (a header, a footer, `defined-link`, `defined-button`, etc)
 - Some basic sample styles (given a few `.scss` files)
 
-## Get started
+## Get started!
 
 Simply clone or download this repo.
 I suggest you to download it and initialize another git repo instead of forking one.
