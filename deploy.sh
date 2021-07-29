@@ -18,7 +18,7 @@ cp index.html 404.html
 # CUSTOM: if you are deploying to a custom domain,
 #         set your domain in CNAME to avoid bugs (from GitHub Page service).
 #         no need to change with default 'github.io' domain.
-# echo 'docs.tacitech.cn' > CNAME
+echo 'vuebp.lingxi.li' > CNAME
 
 git init --initial-branch=development
 git add -A
