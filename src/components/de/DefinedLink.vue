@@ -1,7 +1,10 @@
 <template>
-  <button class="defined-link" @click="startRouting()">
+  <a class="defined-link" v-if="href !== undefined" :href="href !== undefined ? href : ''">
     <slot></slot>
-  </button>
+  </a>
+  <a class="defined-link" v-else @click="startRouting()">
+    <slot></slot>
+  </a>
 </template>
 
 <script setup>
